@@ -1,0 +1,8 @@
+[Unit]
+Description=Cold Reset Host
+Requires=tyan-host-ready.target
+After=tyan-host-ready.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/host_reset.sh

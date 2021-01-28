@@ -1,0 +1,8 @@
+# Used to prime the Inventory with the required properties.
+
+# Load the contents of $EEPROM as $FRUID, but only if
+# $SENTINEL does not exist.
+
+EEPROM=/usr/share/ipmi-fru/system-blank.bin
+FRUID=0x2
+SENTINEL=/var/lib/phosphor-inventory-manager/xyz/openbmc_project/inventory/system/chassis/xyz.openbmc_project.Inventory.Item.Chassis

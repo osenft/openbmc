@@ -1,0 +1,2 @@
+DEVPATH=/xyz/openbmc_project/watchdog/host0
+SERVICE=xyz.openbmc_project.Watchdog

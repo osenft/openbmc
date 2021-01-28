@@ -1,0 +1,11 @@
+[Unit]
+Description=Host is ready to be powered on
+Wants=phosphor-ipmi-host.service
+After=phosphor-ipmi-host.service
+Wants=obmc-console@ttyVUART0.service
+After=obmc-console@ttyVUART0.service
+Wants=sys_nreset_gpio_poller.service
+After=sys_nreset_gpio_poller.service
+Wants=sys_power_control.service
+After=sys_power_control.service
+RefuseManualStop=yes

@@ -1,0 +1,14 @@
+[Unit]
+Description=Read %I EEPROM
+Wants=mapper-wait@-xyz-openbmc_project-inventory.service
+After=mapper-wait@-xyz-openbmc_project-inventory.service
+
+[Service]
+Restart=no
+Type=oneshot
+EnvironmentFile={envfiledir}/obmc/eeproms/%I
+ExecStart={bindir}/tyan-read-eeprom.sh
+SyslogIdentifier=tyan-read-eeprom
+
+[Install]
+WantedBy=tyan-host-ready.target

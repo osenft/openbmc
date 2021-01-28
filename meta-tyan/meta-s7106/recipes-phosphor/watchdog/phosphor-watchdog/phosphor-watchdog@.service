@@ -1,0 +1,7 @@
+[Unit]
+Description=Phosphor %I watchdog
+
+[Service]
+EnvironmentFile={envfiledir}/obmc/watchdog/%I
+ExecStart=/usr/bin/env phosphor-watchdog --service=${{SERVICE}} --path=${{DEVPATH}} --continue
+SyslogIdentifier=phosphor-watchdog

@@ -1,0 +1,11 @@
+[Unit]
+Description=System power control daemon
+
+[Service]
+Type=simple
+Restart=always
+EnvironmentFile=/etc/default/obmc/sys_power_control
+ExecStart=/usr/bin/sys_power_control $GPIO_CHIP $GPIO_LINE_PGOOD $GPIO_LINE_PWRBTN
+
+[Install]
+WantedBy=multi-user.target

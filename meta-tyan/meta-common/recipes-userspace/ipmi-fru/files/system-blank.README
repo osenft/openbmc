@@ -1,0 +1,7 @@
+The system-blank.bin was created from system-blank.json using
+https://github.com/ipmitool/frugen.
+
+./frugen --json --from system-blank.json system-blank.bin
+
+The file contains the product and chassis IPMI FRU areas and is used to
+prime the Inventory with the required properties.

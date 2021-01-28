@@ -1,0 +1,19 @@
+[Unit]
+Description=Stop Host
+Requires=tyan-host-ready.target
+After=tyan-host-ready.target
+Before=tyan-host-poweron.service
+Conflicts=obmc-chassis-poweron@0.target
+Conflicts=obmc-host-start@0.target
+Conflicts=tyan-host-reset.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "busctl set-property \
+   `mapper get-service /xyz/openbmc_project/Chassis/Control/Power0` \
+   /xyz/openbmc_project/Chassis/Control/Power0 \
+   xyz.openbmc_project.Chassis.Control.Power State i 0"
+
+[Install]
+WantedBy=obmc-chassis-poweroff@0.target
+WantedBy=obmc-host-stop@0.target

@@ -1,0 +1,14 @@
+# The on-board EEPROM contains the IPMI FRU board properties
+# as defined at manufacturing time.
+
+# Load $LENGTH from $EEPROM at $OFFSET into $FRUID.
+
+EEPROM=/sys/bus/i2c/devices/i2c-2/2-0050/eeprom
+FRUID=0x1
+
+# 0x6000
+OFFSET=24576
+
+# 0x1000
+LENGTH=4096
+

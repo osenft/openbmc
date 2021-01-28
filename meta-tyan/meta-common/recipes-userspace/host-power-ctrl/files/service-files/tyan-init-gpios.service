@@ -1,0 +1,12 @@
+[Unit]
+Description=Configure GPIOs for Host Power Control
+Before=tyan-host-ready.target
+
+[Service]
+Restart=no
+RemainAfterExit=true
+Type=oneshot
+ExecStart=/usr/bin/gpio_init_once.sh
+
+[Install]
+WantedBy=tyan-host-ready.target

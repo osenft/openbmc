@@ -1,0 +1,5 @@
+# Configuration file for sys_nreset_gpio_poller
+GPIO_CHIP=0
+
+# nRESET is on GPIO D3
+GPIO_LINE_NRESET=27

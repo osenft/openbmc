@@ -1,0 +1,8 @@
+[Unit]
+Description=Power cycle the TYAN host
+Requires=tyan-host-poweroff.service
+After=tyan-host-poweroff.service
+Requires=tyan-host-poweron.service
+After=tyan-host-poweron.service
+Conflicts=obmc-chassis-poweroff@0.target
+RefuseManualStop=yes

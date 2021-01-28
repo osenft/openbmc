@@ -1,0 +1,8 @@
+# Configuration file for sys_power_control
+GPIO_CHIP=0
+
+# PGOOD is on GPIO D2
+GPIO_LINE_PGOOD=26
+
+# PWRBTN is on GPIO E1
+GPIO_LINE_PWRBTN=33

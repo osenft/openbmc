@@ -1,0 +1,11 @@
+[Unit]
+Description=System nRESET monitoring daemon
+
+[Service]
+Type=simple
+Restart=always
+EnvironmentFile=/etc/default/obmc/sys_nreset_gpio_poller
+ExecStart=/usr/bin/sys_nreset_gpio_poller $GPIO_CHIP $GPIO_LINE_NRESET
+
+[Install]
+WantedBy=multi-user.target
