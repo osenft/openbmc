@@ -1,6 +1,6 @@
-KBRANCH ?= "dev-5.4"
-LINUX_VERSION ?= "5.4.39"
+KBRANCH ?= "tyan-5.2"
+LINUX_VERSION ?= "5.2.14"
 
-SRCREV="30079d65ac31588d4535122fdb14278ef5804ce4"
+SRCREV="dc0e85ba2c6b6d30a35359633e5d8c409a9a034a"
 
 require linux-aspeed.inc
