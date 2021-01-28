@@ -1,0 +1,33 @@
+From 9036ca3807721c627677acc7a1728c7bbb9203a3 Mon Sep 17 00:00:00 2001
+From: Oskar Senft <osk@google.com>
+Date: Thu, 28 Jan 2021 15:25:41 -0500
+Subject: [PATCH] Always use D-Bus bus .SMS
+
+The original code used the device name to construct the D-Bus bus name.
+This requires the phosphor-ipmi-host to provide configuration matching
+the KCS bridge. This change results in always using the .SMS D-bus bus.
+
+Signed-off-by: Oskar Senft <osk@google.com>
+---
+ kcsbridged.cpp | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/kcsbridged.cpp b/kcsbridged.cpp
+index 2110f3e..3440c67 100644
+--- a/kcsbridged.cpp
++++ b/kcsbridged.cpp
+@@ -330,9 +330,8 @@ int main(int argc, char* argv[])
+         return EXIT_FAILURE;
+     }
+ 
+-    static constexpr const char busBase[] = "xyz.openbmc_project.Ipmi.Channel.";
+-    std::string busName(busBase + channel);
+-    bus->request_name(busName.c_str());
++    static constexpr const char busName[] = "xyz.openbmc_project.Ipmi.Channel.SMS";
++    bus->request_name(busName);
+ 
+     io->run();
+ 
+-- 
+2.30.0.365.g02bc693789-goog
+
